@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        List <String> goods = new ArrayList<>();
+        List<String> goods = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -16,21 +16,21 @@ public class Main {
             String operation = scanner.next();
 
             switch (operation) {
-                case ("1") : {
+                case ("1"): {
                     System.out.println("Какую покупку хотите добавить?");
                     String good = scanner.next();
                     goods.add(good);
-                    System.out.printf("%s\nИтого в списке покупок: %d товар(ов/а)\n" , good, goods.size());
+                    System.out.printf("%s\nИтого в списке покупок: %d товар(ов/а)\n", good, goods.size());
                     break;
                 }
 
-                case ("2") : {
+                case ("2"): {
                     print(goods);
                     break;
 
                 }
 
-                case ("3") : {
+                case ("3"): {
                     System.out.println("Какую покупку хотите удалить? Введите номер или название");
                     String numberOrName = scanner.next();
                     if (checkOperations(numberOrName)) {
@@ -42,17 +42,18 @@ public class Main {
                     break;
                 }
 
-                }
+            }
 
-             }
         }
+    }
 
-        public static void print(List<String> goods) {
+    public static void print(List<String> goods) {
         for (int i = 1; i < goods.size(); i++) {
             System.out.printf("%d. %s\n", i, goods.get(i));
         }
-        }
-        private static boolean checkOperations(String numberOrName) {
+    }
+
+    private static boolean checkOperations(String numberOrName) {
         try {
             Integer.parseInt(numberOrName);
             return true;
